@@ -23,8 +23,6 @@ export class SearchBoxComponent implements OnInit {
   onSearch(){
     // Call itunes service with search input
     this.searchResults = this.itunesService.getSongs(this.searchInput);
-    
-    console.log(this.searchInput);
-  }
+    }
 
 }
