@@ -9,9 +9,9 @@ import { ItunesService } from '../itunes.service';
 })
 
 export class SearchBoxComponent implements OnInit {
-  // Input field in search box
+  // Prop for seach box input
   searchInput: string;
-  // Member for search reslt bindings
+  // Prop for search results
   searchResults: SearchResult[];
   // columns to display 
   displayedColumns: string[] = ['name', 'artist', 'album'];
@@ -28,7 +28,6 @@ export class SearchBoxComponent implements OnInit {
   onSearch() {
     if(!this.performedSearch){
       if(this.searchInput) {
-        console.log(this.searchInput);
         // Call itunes service with search input
         this.itunesService.getSongs(this.searchInput)
           // Retrieve result from service

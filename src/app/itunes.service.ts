@@ -8,13 +8,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ItunesService {
 
-  searchUrl: string = 'https://itunes.apple.com/search';
+  // Base search url
+  baseUrl: string = 'https://itunes.apple.com/search';
   searchLimit: number = 3
 
   constructor(private http: HttpClient) { }
   
   // Return top results based on configurable number
-  getSongs(searchInput: string) {
-   return this.http.jsonp(`${this.searchUrl}?term=${searchInput}&media=music&limit=${this.searchLimit}`, 'callback');
+  getSongs(searchTerm: string) {
+    console.log(`Searching for ${searchTerm}`);
+    // Searching and restricting on song names
+    return this.http.jsonp(`${this.baseUrl}?term=${searchTerm}&media=music&entity=song&attribute=songTerm&limit=${this.searchLimit}`, 'callback');
   }
 }
