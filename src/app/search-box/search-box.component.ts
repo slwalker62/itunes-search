@@ -22,7 +22,20 @@ export class SearchBoxComponent implements OnInit {
   // Search event on button click
   onSearch(){
     // Call itunes service with search input
-    this.searchResults = this.itunesService.getSongs(this.searchInput);
-    }
+    this.itunesService.getSongs(this.searchInput)
+    .subscribe(
+      res => {
+        this.searchResults = res['results'].map(
+          item => {
+            return new SearchResult(
+                          item.trackName, 
+                          item.artistName, 
+                          item.collectionName
+                        )
+          }
+        )        
+      }
+    );
+  }
 
 }

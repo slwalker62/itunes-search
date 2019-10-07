@@ -11,19 +11,19 @@
         <!-- Song name column -->
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef> Song name </mat-header-cell>
-            <mat-cell *matCellDef="let result"> {{result.song}} </mat-cell>
+            <mat-cell *matCellDef="let result"> {{result.trackName}} </mat-cell>
         </ng-container>
         
         <!-- Artist column -->
         <ng-container matColumnDef="artist">
             <mat-header-cell *matHeaderCellDef> Artist </mat-header-cell>
-            <mat-cell *matCellDef="let result"> {{result.artist}} </mat-cell>
+            <mat-cell *matCellDef="let result"> {{result.artistName}} </mat-cell>
         </ng-container>
         
         <!-- Album column -->
         <ng-container matColumnDef="album">
             <mat-header-cell *matHeaderCellDef> Album </mat-header-cell>
-            <mat-cell *matCellDef="let result"> {{result.album}} </mat-cell>
+            <mat-cell *matCellDef="let result"> {{result.collectionName}} </mat-cell>
         </ng-container>
         
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

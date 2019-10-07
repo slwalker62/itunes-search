@@ -1,5 +1,3 @@
 export class SearchResult {
-    song: string;
-    artist: string;
-    album: string;;
+    constructor(public trackName: string, public artistName: string, public collectionName: string) {}
 }
