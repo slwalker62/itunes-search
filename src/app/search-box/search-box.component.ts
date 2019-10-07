@@ -16,21 +16,22 @@ export class SearchBoxComponent implements OnInit {
   // columns to display 
   displayedColumns: string[] = ['name', 'artist', 'album'];
 
-  searchClicked: boolean;
+  performedSearch: boolean;
 
   constructor(private itunesService: ItunesService) { }
 
   ngOnInit() {
-    let searchClicked = false;
+    this.performedSearch = false;
   }
 
   // Search event on button click
   onSearch() {
-    if(!this.searchClicked){
-      if(this.searchInput != null) {
+    if(!this.performedSearch){
+      if(this.searchInput) {
         console.log(this.searchInput);
         // Call itunes service with search input
         this.itunesService.getSongs(this.searchInput)
+          // Retrieve result from service
           .subscribe(
             res => {
               this.searchResults = res['results'].map(
@@ -44,11 +45,14 @@ export class SearchBoxComponent implements OnInit {
               )        
             }
           );
+          this.performedSearch = true;
       }  
     } else {
+      // Clear out search results
       this.searchResults = null;
+      // Flip back flag signalling search performed
+      this.performedSearch = false;
     }
-    this.searchClicked = !this.searchClicked;
   }
 
 }
