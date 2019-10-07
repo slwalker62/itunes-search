@@ -1,0 +1,17 @@
+.search-table {
+    width: 600px;
+}
+
+.search-input {
+    width: 600px;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-button {
+    height: 35px;
+    margin-left: 20px;
+}
+

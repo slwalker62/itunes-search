@@ -1,9 +1,14 @@
 .container {
     display:flex;
-    width: 100%;
+    justify-content: space-between;
+    /* flex-direction: column */
+    height: 100vh;
 }
-.search{
-    margin: auto;
-    min-width: 500px;
-    max-width: 700px;
+
+.app-search-box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
 }
+
