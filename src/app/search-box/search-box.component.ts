@@ -17,10 +17,11 @@ export class SearchBoxComponent implements OnInit {
   constructor(private itunesService: ItunesService) { }
 
   ngOnInit() {
+
   }
 
   // Search event on button click
-  onSearch(){
+  onSearch() {
     // Call itunes service with search input
     this.itunesService.getSongs(this.searchInput)
     .subscribe(
